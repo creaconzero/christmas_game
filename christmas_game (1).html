@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santa's Ultimate Christmas Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <div class="achievement-popup" id="achievementPopup">
+        <h3>🏆 ¡Logro Desbloqueado!</h3>
+        <p id="achievementText"></p>
+    </div>
+
+    <div class="container">
+        <h1>🎄 SANTA'S CHALLENGE 🎅</h1>
+        <p class="subtitle">¡El Desafío Navideño Definitivo!</p>
+        
+        <div class="difficulty-selector" id="difficultySelector">
+            <button class="difficulty-btn selected" onclick="selectDifficulty('easy')">🎁 Fácil</button>
+            <button class="difficulty-btn" onclick="selectDifficulty('normal')">⭐ Normal</button>
+            <button class="difficulty-btn" onclick="selectDifficulty('hard')">💣 Difícil</button>
+            <button class="difficulty-btn" onclick="selectDifficulty('extreme')">🔥 Extremo</button>
+        </div>
+
+        <div class="game-header">
+            <div class="stat-card">
+                <div class="stat-label">Puntuación</div>
+                <div class="stat-value" id="score">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Vidas</div>
+                <div class="stat-value" id="lives">❤️❤️❤️</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Nivel</div>
+                <div class="stat-value" id="level">1</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Récord</div>
+                <div class="stat-value" id="highscore">0</div>
+            </div>
+        </div>
+
+        <div class="powerup-bar">
+            <div class="powerup-indicator" id="shieldIndicator">🛡️ Escudo</div>
+            <div class="powerup-indicator" id="speedIndicator">⚡ Velocidad</div>
+            <div class="powerup-indicator" id="magnetIndicator">🧲 Imán</div>
+        </div>
+
+        <div class="game-area" id="gameArea">
+            <div class="moon"></div>
+            <div class="combo-display" id="comboDisplay">
+                🔥 COMBO x<span id="comboCount">0</span> 🔥
+            </div>
+            <div class="santa" id="santa">🎅</div>
+            <div class="ground"></div>
+        </div>
+
+        <div class="game-over-screen" id="gameOverScreen">
+            <h2>🎄 ¡JUEGO TERMINADO! 🎄</h2>
+            <div class="final-score">Puntuación Final: <span id="finalScore">0</span></div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-item-label">🏆 Récord Personal</div>
+                    <div class="stat-item-value" id="finalHighscore">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-label">🎁 Regalos Atrapados</div>
+                    <div class="stat-item-value" id="giftsCaught">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-label">🔥 Mejor Combo</div>
+                    <div class="stat-item-value" id="bestCombo">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item-label">⭐ Nivel Alcanzado</div>
+                    <div class="stat-item-value" id="maxLevel">1</div>
+                </div>
+            </div>
+            
+            <button class="btn" onclick="startGame()" style="margin-top: 25px;">🎮 Jugar de Nuevo</button>
+        </div>
+
+        <button class="btn" id="startBtn" onclick="startGame()">▶️ INICIAR JUEGO</button>
+        
+        <p class="instructions">
+            <strong>⌨️ Controles:</strong> Flechas ← → o A D para mover<br>
+            🎁 +10 | 🎀 +10 | ⭐ +20 | 🔔 +15 | 💎 +50 | 💣 -1 vida<br>
+            🛡️ Escudo | ⚡ Velocidad x2 | 🧲 Imán | ⏰ Tiempo Extra<br>
+            <strong>¡Haz combos para multiplicar tu puntuación!</strong>
+        </p>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
